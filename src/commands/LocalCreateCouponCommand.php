@@ -31,7 +31,7 @@ class LocalCreateCouponCommand extends Command
 	 */
 	public function fire()
 	{
-		if ('local' != Config::get('laravel-billing::default')) {
+		if ('local' != config('billing.default')) {
 			return $this->error('Not configured to use the "local" driver.');
 		}
 		
