@@ -66,7 +66,7 @@ return array(
 		'local' => array(
 			'database' => array(
 				'driver'   => 'sqlite',
-				'database' => storage_path().'/meta/billing-local.sqlite',
+				'database' => database_path('billing-local.sqlite'),
 				'prefix'   => '',
 			),
 			'api_delay_ms' => 200,
