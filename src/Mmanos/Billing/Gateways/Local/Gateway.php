@@ -23,12 +23,12 @@ class Gateway implements GatewayInterface
 	public function __construct($connection = null)
 	{
 		if (null === $connection) {
-			$connection = Config::get('laravel-billing::gateways.local');
+			$connection = config('billing.gateways.local');
 		}
 		
 		$this->connection = $connection;
 		
-		Config::set('database.connections.billinglocal', Arr::get($connection, 'database'));
+		\Config::set('database.connections.billinglocal', Arr::get($connection, 'database'));
 		
 		$path = Arr::get($connection, 'database.database');
 		if (!file_exists($path) && is_dir(dirname($path))) {
